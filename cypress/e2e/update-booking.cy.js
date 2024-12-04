@@ -35,8 +35,9 @@ describe("Update Booking", () => {
       },
     }).then((response) => {
       expect(response.status).to.equal(200);
-      expect(response.body).to.be.a("number");
-      bookingId = response.body.bookingId;
+      expect(response.body).to.be.an("object")
+      expect(response.body.bookingid).to.be.a("number");
+      bookingId = response.body.bookingid;
     });
   });
   it("Update a booking", () => {
